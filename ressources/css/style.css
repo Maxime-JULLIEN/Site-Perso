@@ -1,0 +1,49 @@
+.page-content {
+    max-width: 1080px;
+}
+
+
+/* .mdl-card-picture {
+	 background:url('/ressources/img/plug.png') center center #324a5e;
+	    background-size: cover;
+}
+
+.mdl-card-picture2 {
+	 background:url('/ressources/img/led2.png') center center #324a5e;
+	    background-size: cover;
+} */
+
+.disabled {
+	    pointer-events: none;
+    opacity: 0.4;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+	.bottom {
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 20px;
+		}
+
+		.bottom-right {
+		position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+padding-bottom: 23px;
+			padding-right: 23px;
+    z-index: 900;
+		}
+		
+		.center {
+			display: flex;
+			justify-content: center;
+		}
+
+.mdl-button--fab{
+	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+.mdl-button--fab:hover{
+    box-shadow: 0 0 8px rgba(243, 197, 197, 0.18),0 8px 16px rgba(0,0,0,.36);
+	}
