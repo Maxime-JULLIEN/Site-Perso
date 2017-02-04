@@ -1,23 +1,14 @@
 <?php	
-include $_SERVER['DOCUMENT_ROOT']."/bbd_connect.php" ; 
-$devices = $bdd->query('SELECT * FROM devices');
+include "/bbd_connect.php" ; 
+$devices = $bdd->query('SELECT * FROM villes');
 ?>
 		<?php
 					
 while ($donnees = $devices->fetch())
 {
 	$ID = $donnees['ID'];
-	$State = $donnees['State'];
-	$IP = $donnees['IP'];
-	$Link = $donnees['Link'];
-	$ON = $donnees['ON'];
-	$OFF = $donnees['OFF'];
 	$name = $donnees['Name'];
 	$img_link = $donnees['img_link'];
-	$conso = $donnees['conso'];
-	$Connected = $donnees['Connected'];
-	if($Connected == "0"){$Connected="disabled";} else{$Connected="";};
-	if($State == "1"){$ButtonState="checked";} else{$ButtonState="";};
 	echo '
 	<style>
 	.mdl-card-picture'.$ID.' {
@@ -25,12 +16,10 @@ while ($donnees = $devices->fetch())
 	    background-size: cover;
 }
 </style>';
-	echo '<div class="mdl-card mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col '.$Connected.' " >
+	echo '<div class="mdl-card mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col " >
 						<div class="mdl-card-picture'.$ID.' mdl-card--expand"></div>
-						<div class="mdl-card__supporting-text">Consommation actuelle : '   .$conso.    ' W</div>
+						<div class="mdl-card__supporting-text">Ville : '   .$name.    ' W</div>
 						<div class="mdl-card__actions mdl-card--border">
-							<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch'.$ID.'"> <span class="mdl-switch__label mdl-card__title-text">'.$name.'</span>
-								<input type="checkbox" id="switch'.$ID.'" class="mdl-switch__input" onchange="object(this, \''   .$IP.    '\', \''   .$Link.    '\', \''   .$ON.    '\',\''   .$OFF.    '\'); myFunction2(' .$ID. '); " '.$ButtonState.'> </label>
 						</div>
 					</div> ';
 };
